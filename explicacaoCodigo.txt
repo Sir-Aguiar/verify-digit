@@ -1,3 +1,0 @@
-São declaradas duas variáveis de tipos diferentes, porém de "mesmo" conteúdo.
-É feita a verificação de tipo e conteúdo de ambas variáveis, caso sejam iguais é logado "Os valores são iguais", senao "Os valores são diferentes".
-Como é feito também a validação de tipo o resultado mostrado será "Os valores são diferentes"

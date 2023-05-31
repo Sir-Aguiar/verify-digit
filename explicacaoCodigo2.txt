@@ -1,2 +1,0 @@
-A variável numero é declarada como string, e ao somar uma string com qualquer outra coisa é feito uma concatenação, ou seja, ao tentar somar "5" com 10 o seu resultado será "510".
-Como esta é uma operação válida dentro da línguagem, nenhum erro será retornado.
