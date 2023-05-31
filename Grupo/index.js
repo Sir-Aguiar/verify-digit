@@ -15,9 +15,16 @@ const getBinarySequence = (num) => {
   return binaries
 }
 const getDecimalDigit = (bin) => parseInt(bin, 2).toString(10)
-let fullSeq = "1836781-85"
+const verifySequence = (sequence) => {
+  let sequencia = sequence.split("-")[0]
+  let binSequencia = getBinarySequence(sequencia)
+  let verDigit = getDecimalDigit(binSequencia.toString())
+  return {
+    verDigit,
+    sequence:Number(sequencia),
+    status: sequence.split("-")[1] == verDigit
+  }
+}
+let fullSeq = "1836781-84"
 
-let sequencia = fullSeq.split("-")[0]
-let binSequencia = getBinarySequence(sequencia)
-let verDigit = getDecimalDigit(binSequencia.toString())
-
+console.log(verifySequence(fullSeq))
