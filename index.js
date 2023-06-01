@@ -1,11 +1,21 @@
+
 /*
-  Regras:
-  - A sequência deve ter 7 caracteres (Entrada);
-  - Pegar o último bit de cada caractere;
-  - Forma uma sequência binária com os estes bits;
-  - Converter a sequência binária para decimal;
-  - O número decimal obtido será o dígito verificador.
+	Autores:
+	- Felipe Ferreira Aguiar;
+	- Ana Beatriz Schuindt do Amaral;
+	- Kevin da Silva Medeiros;
+	- Maria Eduarda Ramos de Queiroz.
+ */
+
+/*
+	Regras:
+	- A sequência deve ter 7 caracteres (Entrada);
+	- Pegar o último bit de cada caractere;
+	- Forma uma sequência binária com os estes bits;
+	- Converter a sequência binária para decimal;
+	- O número decimal obtido será o dígito verificador.
 */
+const readLine = require("readline-sync")
 
 const binToDec = (bin) => parseInt(bin, 2).toString(10);
 const decToBin = (dec) => parseInt(dec, 10).toString(2);
@@ -41,3 +51,21 @@ const verifySequence = (sequence) => {
 	if (hashCode === expectedHash) return true;
 	return false;
 };
+
+let userSequence = readLine.question("Insira uma sequência: ")
+
+if (verifySequence(userSequence)) {
+	console.log("Esta sequência é válida")
+}
+else {
+	console.log("Esta sequência não é válida")
+	let userChoice = readLine.question("Deseja gerar uma sequência válida (utilizando o digito verificador inserido) s ou n?")
+
+	if (userChoice == "s") {
+		let userDigit = userSequence.split("-")[1]
+		console.log(generateSequenceByHash(userDigit))
+	} else {
+		return
+	}
+
+}
